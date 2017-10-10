@@ -1,8 +1,8 @@
 import pygame
 import numpy as np
-from test_grid import Grid
-from test_grid import Position
-from test_grid import make_grid
+from grid import Grid
+from grid import Position
+from grid import make_grid
 
 def traversal(Grid):
     pygame.init()
@@ -26,7 +26,7 @@ def traversal(Grid):
     
         screen.fill(Grid.BLACK)
     
-        # --- Drawing code should go here
+        #Draw the initial grid 
         for column in range(Grid.width):
             for row in range(Grid.height):
                 color = Grid.WHITE
