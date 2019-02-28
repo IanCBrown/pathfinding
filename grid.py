@@ -3,7 +3,6 @@ import numpy as np
 
 
 class Grid:
-    
     rect_width = 20
     rect_height = 20 
     rect_margin = 5 
@@ -29,15 +28,16 @@ class Grid:
         Grid.grid[0][0] = 1
         Grid.grid[self.width - 1][self.height - 1] = 19
 
-class Position:
-    
+    def print_grid(self):
+        print(self.grid)
 
+class Position:
     def __init__(self, x, y):
         Position.x = x
         Position.y = y
         Position.visited = np.zeros(shape=(Grid.width,Grid.height), dtype=bool)
         #Position.Neighbors = [None,None,None,None]
-    def get_neighbors(Position):
+    def get_neighbors(self, Position):
         neighbors = []
         if Position.x < Grid.width - 1:
             neighbors.append(Position.x + 1, Position.y)
@@ -48,11 +48,11 @@ class Position:
         if Position.y > 0:
             neighbors.append(Position.x, Position.y - 1)
         return neighbors
-    def is_visited(Position):
+    def is_visited(self, Position):
         if Position.visited[Position.x][Position.y] is True:
             return True
         return False 
-    def visit(Position):
+    def visit(self, Position):
         Position.visited[Position.x][Position.y] = True 
 
 
